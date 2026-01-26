@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Impressum / Imprint</title>
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #111111;
+      --muted: #666666;
+      --accent: #0a84ff;
+      --border: #e5e5e5;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #000000;
+        --text: #f5f5f5;
+        --muted: #aaaaaa;
+        --border: #2a2a2a;
+      }
+    }
+
+    body {
+      margin: 0;
+      padding: 24px;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin: 0;
+    }
+
+    .lang-switch button {
+      background: none;
+      border: none;
+      font-size: 0.9rem;
+      cursor: pointer;
+      color: var(--accent);
+      padding: 4px 8px;
+    }
+
+    .lang-switch button.active {
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    section {
+      display: none;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      margin-top: 24px;
+    }
+
+    p {
+      margin: 8px 0;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <header>
+      <h1>Impressum / Imprint</h1>
+      <div class="lang-switch">
+        <button id="btn-de" class="active" onclick="setLang('de')">DE</button>
+        <button id="btn-en" onclick="setLang('en')">EN</button>
+      </div>
+    </header>
+
+    <!-- ================= DE ================= -->
+    <section id="lang-de" class="active">
+      <h2>Angaben gemäß § 5 TMG</h2>
+      <p>
+        Rolf Seegelken<br />
+        Deutschland
+      </p>
+
+      <h2>Kontakt</h2>
+      <p>
+        E-Mail: <em>(wird auf Anfrage mitgeteilt)</em>
+      </p>
+
+      <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+      <p>
+        Rolf Seegelken<br />
+        Deutschland
+      </p>
+
+      <h2>Hinweis</h2>
+      <p>
+        Diese App dient als technische Demonstration zur Implementierung von
+        Tracking-, Analyse- und Consent-Management-Lösungen gemäß DSGVO.
+      </p>
+    </section>
+
+    <!-- ================= EN ================= -->
+    <section id="lang-en">
+      <h2>Information according to § 5 TMG</h2>
+      <p>
+        Rolf Seegelken<br />
+        Germany
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        Email: <em>(provided upon request)</em>
+      </p>
+
+      <h2>Responsible for content</h2>
+      <p>
+        Rolf Seegelken<br />
+        Germany
+      </p>
+
+      <h2>Notice</h2>
+      <p>
+        This app is a technical demonstration showcasing the implementation of
+        analytics, tracking and consent management solutions in compliance with GDPR.
+      </p>
+    </section>
+
+    <footer>
+      Last updated: 2026
+    </footer>
+  </div>
+
+  <script>
+    function setLang(lang) {
+      document.getElementById("lang-de").classList.toggle("active", lang === "de");
+      document.getElementById("lang-en").classList.toggle("active", lang === "en");
+      document.getElementById("btn-de").classList.toggle("active", lang === "de");
+      document.getElementById("btn-en").classList.toggle("active", lang === "en");
+    }
+  </script>
+</body>
+</html>
